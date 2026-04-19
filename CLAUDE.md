@@ -1,8 +1,8 @@
-# CLAUDE.md — AEOレポートサービス 梅プラン
+# CLAUDE.md — AI Brand Insightサービス Quick Scan
 
 ## このリポジトリについて
 
-AEO（AI検索最適化）調査レポートサービスの「梅プラン（¥300）」フロントエンド。
+AEO（AI検索最適化）調査レポートサービスの「Quick Scan（¥300）」フロントエンド。
 購入者がトークンを使って、ChatGPT・Claude・Geminiの3AIに同じ質問を投げ、回答を横並びで確認できるWebアプリ。
 
 ## 作業ルール
@@ -48,7 +48,7 @@ https://script.google.com/macros/s/AKfycbx_rsGMtxez4G17xEbcX46fk8GFs85lEd--eNdI1
 - 各回答はmarked.jsでMarkdownレンダリング
 - 使用したプロンプト全文を表示（透明性のため）
 - 「※ 回答は読みやすさのため140文字程度に要約しています」を明記
-- 竹プランへのアップセル導線
+- Deep Scanへのアップセル導線
 
 ## GAS APIの仕様
 
