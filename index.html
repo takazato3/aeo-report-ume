@@ -418,13 +418,112 @@
     .ai-card-name { font-size: 15px; font-weight: 700; color: var(--text-dark); }
     .ai-card-desc { font-size: 14px; color: var(--text-muted); line-height: 1.75; }
 
+    /* ─── ⑤ Value ─── */
+    .value {
+      background: var(--white);
+      padding: 80px 24px;
+    }
+    .value-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .value-heading {
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--text-dark);
+      letter-spacing: 0.04em;
+      font-feature-settings: "palt";
+      text-align: center;
+      line-height: 1.55;
+      margin-bottom: 12px;
+    }
+    .value-sub {
+      font-size: 16px;
+      color: var(--text-muted);
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .value-cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+    .value-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px 20px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    }
+    .value-card-icon {
+      font-size: 32px !important;
+      color: var(--amber-500);
+      margin-bottom: 12px;
+      display: block;
+    }
+    .value-card-text {
+      font-size: 14px;
+      color: var(--text-dark);
+      line-height: 1.75;
+      font-weight: 500;
+    }
+
+    /* ─── ⑥ Appeal ─── */
+    .appeal {
+      background: var(--blue-gray-50);
+      padding: 80px 24px;
+    }
+    .appeal-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .appeal-cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    .appeal-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px 24px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    }
+    .appeal-card-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .appeal-card-icon {
+      font-size: 28px !important;
+      color: var(--amber-500);
+      flex-shrink: 0;
+    }
+    .appeal-card-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text-dark);
+      letter-spacing: 0.02em;
+    }
+    .appeal-card-desc {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.85;
+    }
+
     @media (max-width: 768px) {
       .samples { padding: 56px 16px; }
       .service  { padding: 56px 16px; }
+      .value    { padding: 56px 16px; }
+      .appeal   { padding: 56px 16px; }
       .section-heading  { font-size: 20px; }
       .service-heading  { font-size: 20px; }
       .service-emphasis { font-size: 17px; }
-      .ai-cards { grid-template-columns: 1fr; }
+      .value-heading    { font-size: 20px; }
+      .ai-cards   { grid-template-columns: 1fr; }
+      .value-cards  { grid-template-columns: repeat(2, 1fr); }
+      .appeal-cards { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -558,6 +657,68 @@
             <span class="ai-card-name">Gemini</span>
           </div>
           <p class="ai-card-desc">Google検索連携・幅広い層。検索エンジンに近い文脈で回答する傾向。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ⑤ 価値提示 -->
+  <section class="value">
+    <div class="value-inner">
+      <h2 class="value-heading">AIが自社を推奨しているなら、ひとまずは安心。<br>推奨していないなら、手を打つ。</h2>
+      <p class="value-sub">その現状把握が、最初の一歩です。</p>
+      <div class="value-cards">
+        <div class="value-card">
+          <span class="material-icons value-card-icon">search</span>
+          <p class="value-card-text">AI検索で自社がどう見えているかを知る</p>
+        </div>
+        <div class="value-card">
+          <span class="material-icons value-card-icon">compare_arrows</span>
+          <p class="value-card-text">競合と比べてどこにいるかを知る</p>
+        </div>
+        <div class="value-card">
+          <span class="material-icons value-card-icon">flag</span>
+          <p class="value-card-text">施策を始める前の現状把握に使う</p>
+        </div>
+        <div class="value-card">
+          <span class="material-icons value-card-icon">lightbulb</span>
+          <p class="value-card-text">サイト改善・SEO/AEO・営業資料・コンテンツ設計のヒントにできる</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ⑥ アピールポイント -->
+  <section class="appeal">
+    <div class="appeal-inner">
+      <div class="appeal-cards">
+        <div class="appeal-card">
+          <div class="appeal-card-header">
+            <span class="material-icons appeal-card-icon">payments</span>
+            <span class="appeal-card-title">格安な買い切りサービス</span>
+          </div>
+          <p class="appeal-card-desc">¥300から。サブスクなし、更新なし。必要な時に必要な分だけ使えるサービスです。</p>
+        </div>
+        <div class="appeal-card">
+          <div class="appeal-card-header">
+            <span class="material-icons appeal-card-icon">do_not_disturb</span>
+            <span class="appeal-card-title">営業なし・即日調査開始</span>
+          </div>
+          <p class="appeal-card-desc">電話？アポ取りメール？Ops Octopusからしつこい営業は一切しません。「今はちょっと知りたいだけ」のあなたの気持ちにブレーキを掛けることなく、いますぐ調査できます。</p>
+        </div>
+        <div class="appeal-card">
+          <div class="appeal-card-header">
+            <span class="material-icons appeal-card-icon">hub</span>
+            <span class="appeal-card-title">3AI横断の最新調査</span>
+          </div>
+          <p class="appeal-card-desc">ChatGPT / Claude / Geminiに同時に問い合わせ。1つのAIだけでは見えないブランドの実態が見えてきます。調査ボタンを押したその日時点の最新のAI回答を調査するため現状把握に最適です。</p>
+        </div>
+        <div class="appeal-card">
+          <div class="appeal-card-header">
+            <span class="material-icons appeal-card-icon">analytics</span>
+            <span class="appeal-card-title">最大90回調査の信頼性</span>
+          </div>
+          <p class="appeal-card-desc">Deep Scan以上のプランでは、3AI×各30回＝計90回AIに都度調査。複数パターン・最大90回のAIの回答を集計することで信頼性の高いレポートを作成します。※90回調査はDeep Scan以上で提供予定です。</p>
         </div>
       </div>
     </div>
