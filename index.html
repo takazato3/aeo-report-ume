@@ -3,7 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ops Octopus | AIブランド調査レポートサービス</title>
+  <title>Ops Octopus | AIブランド調査レポート - AEO・GEO・LLMO対策の現状把握に</title>
+  <meta name="description" content="ChatGPT・Claude・GeminiのAI検索であなたのブランドがどう推薦されているか調査するレポートサービス。AEO・GEO・LLMO対策の現状把握に。買い切り¥300から。">
+  <meta property="og:title" content="Ops Octopus | AIブランド調査レポート">
+  <meta property="og:description" content="ChatGPT・Claude・GeminiのAI検索であなたのブランドがどう推薦されているか調査するレポートサービス。AEO・GEO・LLMO対策の現状把握に。買い切り¥300から。">
+  <meta property="og:url" content="https://app.ops-octopus.com/">
+  <meta property="og:type" content="website">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -44,7 +49,7 @@
 
     /* ─── Header ─── */
     .header {
-      background: var(--navy-900);
+      background: #0d2340;
       height: auto;
       padding: 1.5rem 24px;
       display: flex;
@@ -136,7 +141,7 @@
       max-width: 1100px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: 60fr 40fr;
+      grid-template-columns: 65fr 35fr;
       gap: 56px;
       align-items: center;
     }
@@ -170,12 +175,23 @@
     }
 
     /* Sub copy */
+    .hero-sub-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+    }
+    .hero-lead {
+      font-size: 0.95rem;
+      color: var(--amber-400);
+      font-weight: 500;
+      line-height: 1.7;
+    }
     .hero-sub {
       font-size: 1.1rem;
       color: var(--off-white);
       opacity: 0.85;
       line-height: 1.85;
-      margin-top: 1.5rem;
     }
 
     /* CTA buttons */
@@ -232,7 +248,7 @@
       box-shadow: 0 8px 32px rgba(0,0,0,0.3);
       overflow: hidden;
       width: 100%;
-      max-width: 520px;
+      max-width: 380px;
       position: relative;
     }
     .hero-mockup img {
@@ -279,39 +295,43 @@
       padding: 80px 24px;
     }
     .about-inner {
-      max-width: 860px;
+      max-width: 1100px;
       margin: 0 auto;
+      display: grid;
+      grid-template-columns: 35fr 65fr;
+      gap: 56px;
+      align-items: start;
+    }
+    .about-section-left {
+      display: flex;
+      flex-direction: column;
     }
     .about-heading {
-      font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+      font-size: clamp(1.5rem, 2.4vw, 2rem);
       font-weight: 700;
       color: var(--text-dark);
       letter-spacing: 0.04em;
       font-feature-settings: "palt";
-      text-align: center;
-      margin-bottom: 40px;
+      text-align: left;
+      margin-bottom: 14px;
+      line-height: 1.45;
     }
-    .about-content {
+    .about-section-sub {
+      font-size: 1rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+    }
+    .about-octopus-bottom {
+      width: 100px;
+      opacity: 0.9;
+      margin-top: 2rem;
+      display: block;
+    }
+    .about-section-right {
       display: flex;
-      align-items: flex-end;
-      gap: 24px;
-    }
-    .about-left {
-      flex-shrink: 0;
-      display: flex;
-      align-items: flex-end;
-    }
-    .about-octopus-img {
-      width: 120px;
-      height: 120px;
-      object-fit: contain;
-    }
-    .about-octopus-fallback {
-      font-size: 72px;
-      line-height: 1;
+      flex-direction: column;
     }
     .about-bubbles {
-      flex: 1;
       display: flex;
       flex-direction: column;
       gap: 10px;
@@ -337,13 +357,13 @@
       border-style: solid;
       border-color: transparent var(--white) transparent transparent;
     }
-    .about-bubbles .bubble:nth-child(even) { margin-top: 1rem; }
+    .about-bubbles .bubble:nth-child(even) { margin-top: 0.75rem; }
     .about-closing {
       display: flex;
       align-items: center;
       justify-content: flex-end;
       gap: 16px;
-      margin-top: 32px;
+      margin-top: 24px;
     }
     .bubble--closing {
       margin-left: 0;
@@ -359,19 +379,161 @@
       border-color: transparent transparent transparent var(--amber-400);
     }
     .about-octopus-sm {
-      width: 72px;
-      height: 72px;
+      width: 64px;
+      height: 64px;
       object-fit: contain;
       flex-shrink: 0;
     }
+    .about-octopus-fallback { font-size: 48px; line-height: 1; }
 
-    @media (max-width: 640px) {
-      .about { padding: 56px 16px; }
-      .about-heading { font-size: 1.4rem; margin-bottom: 28px; }
-      .about-content { gap: 16px; }
-      .about-left { display: none; }
-      .bubble { margin-left: 0; }
-      .bubble::before { display: none; }
+    /* ─── ③ Samples (2-col) ─── */
+    .samples-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 35fr 65fr;
+      gap: 56px;
+      align-items: start;
+    }
+    .samples-left {
+      display: flex;
+      flex-direction: column;
+    }
+    .samples-left .section-heading { text-align: left; }
+    .samples-left .section-desc   { text-align: left; margin: 0 0 1.25rem; max-width: none; }
+    .samples-link {
+      color: var(--amber-500);
+      font-size: 0.95rem;
+      font-weight: 500;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .samples-link:hover { text-decoration: underline; }
+
+    /* ─── ⑧ Steps (2-col) ─── */
+    .steps-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 35fr 65fr;
+      gap: 56px;
+      align-items: start;
+    }
+    .steps-left { display: flex; flex-direction: column; gap: 12px; }
+    .steps-heading {
+      font-size: clamp(1.4rem, 2.2vw, 1.9rem);
+      font-weight: 700;
+      color: var(--text-dark);
+      letter-spacing: 0.04em;
+      font-feature-settings: "palt";
+      text-align: left;
+      line-height: 1.45;
+    }
+    .steps-sub {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      text-align: left;
+      line-height: 1.75;
+    }
+    .steps-col {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .step-item {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      text-align: left;
+      padding: 1.25rem 1.5rem;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+    }
+    .step-icon-wrap {
+      width: 64px;
+      height: 64px;
+      flex-shrink: 0;
+      border-radius: 50%;
+      background: var(--blue-gray-50);
+      border: 2px solid var(--amber-400);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+    }
+    .step-icon-wrap .material-icons {
+      font-size: 2rem !important;
+      color: var(--amber-500);
+    }
+    .step-text { flex: 1; }
+    .step-num {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--amber-500);
+      letter-spacing: 0.08em;
+      margin-bottom: 4px;
+    }
+    .step-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 2px;
+      line-height: 1.5;
+    }
+    .step-sub {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ─── ⑥ Appeal typography ─── */
+    .appeal-card-icon { font-size: 3rem !important; color: var(--amber-500); flex-shrink: 0; }
+    .appeal-card-title { font-size: 1.3rem; font-weight: 700; color: var(--text-dark); }
+    .appeal-card-desc  { font-size: 1rem; color: var(--text-muted); line-height: 1.85; }
+    .appeal { position: relative; overflow: hidden; }
+    .appeal::before {
+      content: '';
+      position: absolute;
+      right: -60px;
+      bottom: -40px;
+      width: 300px;
+      height: 300px;
+      background-image: url('assets/images/octopus-icon.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      opacity: 0.04;
+      pointer-events: none;
+    }
+
+    /* ─── Tentacle dividers ─── */
+    .tentacles-divider {
+      position: relative;
+      height: 80px;
+      overflow: visible;
+      margin-bottom: -40px;
+      z-index: 10;
+      text-align: center;
+    }
+    .tentacles-img {
+      width: 400px;
+      max-width: 80%;
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0.85;
+    }
+    .tentacles-right {
+      position: relative;
+      height: 60px;
+      overflow: visible;
+    }
+    .tentacles-right img {
+      width: 200px;
+      position: absolute;
+      right: 0;
+      opacity: 0.6;
     }
 
     /* ─── 共通 section タイポ ─── */
@@ -975,18 +1137,20 @@
       .plans-heading    { font-size: 22px; }
       .steps-heading    { font-size: 20px; }
       .faq-heading      { font-size: 20px; }
+      .about-inner   { grid-template-columns: 1fr; }
+      .samples-inner { grid-template-columns: 1fr; }
+      .samples-left .section-heading { text-align: center; }
+      .samples-left .section-desc { text-align: center; }
+      .steps-inner   { grid-template-columns: 1fr; }
+      .steps-heading { text-align: center; }
+      .steps-sub     { text-align: center; }
       .service-inner { grid-template-columns: 1fr; }
-      .ai-cards     { grid-template-columns: repeat(3, 1fr); }
+      .ai-cards { grid-template-columns: repeat(3, 1fr); }
       .value-cards  { grid-template-columns: repeat(2, 1fr); }
       .appeal-cards { grid-template-columns: 1fr; }
       .plan-cards   { grid-template-columns: 1fr; }
       .plan-card--featured { order: -1; }
-      .steps-row {
-        grid-template-columns: 1fr;
-        gap: 24px;
-      }
-      .step-arrow { display: none; }
-      .step-item { padding: 0; }
+      .step-item { flex-direction: column; text-align: center; }
       .footer-inner {
         grid-template-columns: 1fr;
         text-align: center;
@@ -1032,12 +1196,15 @@
           でも、何を見ればいいのか<br>
           分からない。
         </h1>
-        <p class="hero-sub">
-          商談も月額契約も要らない買い切りサービスです。<br>
-          ChatGPT・Claude・Geminiに同じ条件（プロンプト）で問い合わせ、<br>
-          AI上でのブランドの推奨状況をレポート化します。<br>
-          まずは¥300のお試し調査から。
-        </p>
+        <div class="hero-sub-group">
+          <p class="hero-lead">AEO / GEO / LLMO —— AI検索最適化が<br>マーケターの新しい課題になっています。</p>
+          <p class="hero-sub">
+            商談も月額契約も要らない買い切りサービスです。<br>
+            ChatGPT・Claude・Geminiに同じ条件（プロンプト）で問い合わせ、<br>
+            AI上でのブランドの推奨状況をレポート化します。<br>
+            まずは¥300のお試し調査から。
+          </p>
+        </div>
         <div class="hero-cta">
           <a class="btn-primary" href="https://buy.stripe.com/6oU14ndhZcAR4XR1EKcwg00">Quick Scanを試す（¥300）→</a>
           <a class="btn-outline" href="#samples">サンプルレポートを見る →</a>
@@ -1053,16 +1220,22 @@
     </div>
   </section>
 
+  <div class="tentacles-divider">
+    <img src="assets/images/tentacles-bottom.png" alt="" class="tentacles-img"
+      onerror="this.style.display='none'">
+  </div>
+
   <!-- ② 課題提起 -->
   <section id="about" class="about">
     <div class="about-inner">
-      <h2 class="about-heading">こんな悩み、ありませんか？</h2>
-      <div class="about-content">
-        <div class="about-left">
-          <img src="assets/images/octopus-icon.png" alt="🐙" class="about-octopus-img"
-            onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-          <span class="about-octopus-fallback" style="display:none;">🐙</span>
-        </div>
+      <div class="about-section-left">
+        <h2 class="about-heading">こんな悩み、ありませんか？</h2>
+        <p class="about-section-sub">AEOが気になるマーケターの、よくある課題です。</p>
+        <img src="assets/images/octopus-icon.png" alt="🐙" class="about-octopus-bottom"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <span class="about-octopus-fallback" style="display:none;font-size:64px;">🐙</span>
+      </div>
+      <div class="about-section-right">
         <div class="about-bubbles">
           <div class="bubble">AEO / LLMO / AI検索が気になるけど、何から手をつけていいか分からない</div>
           <div class="bubble">自社名をAIに聞いてみても、1回の回答だけでは判断できない</div>
@@ -1070,12 +1243,12 @@
           <div class="bubble">競合と比べてどうなのかも、パッと分かりにくい</div>
           <div class="bubble">毎回手作業で聞いて、見比べて、まとめるのは正直しんどい</div>
         </div>
-      </div>
-      <div class="about-closing">
-        <div class="bubble bubble--closing">そのモヤモヤ、Ops Octopusがまとめて代行します。</div>
-        <img src="assets/images/octopus-icon.png" alt="🐙" class="about-octopus-sm"
-          onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-        <span class="about-octopus-fallback" style="display:none;font-size:48px;">🐙</span>
+        <div class="about-closing">
+          <div class="bubble bubble--closing">そのモヤモヤ、Ops Octopusがまとめて代行します。</div>
+          <img src="assets/images/octopus-icon.png" alt="🐙" class="about-octopus-sm"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+          <span class="about-octopus-fallback" style="display:none;">🐙</span>
+        </div>
       </div>
     </div>
   </section>
@@ -1083,25 +1256,26 @@
   <!-- ③ 成果物サンプル -->
   <section id="samples" class="samples">
     <div class="samples-inner">
-      <h2 class="section-heading">こんなレポートが取得できます</h2>
-      <p class="section-sub">Ops Octopusが最新データを都度取得します。</p>
-      <p class="section-desc">AIの回答をただ並べるだけではなく、推奨度・競合比較・言及キーワード・改善アクションまで、判断材料として見やすく整理します。※一部機能はDeep Scan以上で提供予定です。</p>
-      <div class="samples-scroll">
-        <div class="sample-slide">
-          <img src="assets/images/sample-result-full.png" alt="調査結果画面全体">
-          <p class="sample-caption">調査結果画面全体</p>
-        </div>
-        <div class="sample-slide">
-          <img src="assets/images/sample-result-3ai.png" alt="3AIの回答を横並び比較">
-          <p class="sample-caption">3AIの回答を横並び比較</p>
-        </div>
-        <div class="sample-slide">
-          <img src="assets/images/sample-result-insight.png" alt="AIインサイト自動分析">
-          <p class="sample-caption">AIインサイト自動分析</p>
-        </div>
+      <div class="samples-left">
+        <h2 class="section-heading">こういうレポートが見られます。</h2>
+        <p class="section-desc">AIの回答をただ並べるだけではなく、推奨度・競合比較・言及キーワード・改善アクションまで、判断材料として見やすく整理します。<br>※一部機能はDeep Scan以上で提供予定です。</p>
+        <a class="samples-link" href="#plans">サンプルレポートをもっと見る →</a>
       </div>
-      <div class="samples-cta">
-        <button class="btn-disabled" disabled>サンプルレポートを見る</button>
+      <div>
+        <div class="samples-scroll">
+          <div class="sample-slide">
+            <img src="assets/images/sample-result-full.png" alt="調査結果画面全体">
+            <p class="sample-caption">調査結果画面全体</p>
+          </div>
+          <div class="sample-slide">
+            <img src="assets/images/sample-result-3ai.png" alt="3AIの回答を横並び比較">
+            <p class="sample-caption">3AIの回答を横並び比較</p>
+          </div>
+          <div class="sample-slide">
+            <img src="assets/images/sample-result-insight.png" alt="AIインサイト自動分析">
+            <p class="sample-caption">AIインサイト自動分析</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -1266,39 +1440,51 @@
   <!-- ⑧ ご利用の流れ -->
   <section class="steps">
     <div class="steps-inner">
-      <h2 class="steps-heading">あなたがやることはこれだけ</h2>
-      <p class="steps-sub">最短1分*。調べたいカテゴリを選んで、3AIに投げる質問（プロンプト）をつくるだけ。<br>質問作りもAIがお手伝いします。（*Quick Scanの場合）</p>
-      <div class="steps-row">
+      <div class="steps-left">
+        <h2 class="steps-heading">あなたがやることはこれだけ</h2>
+        <p class="steps-sub">最短1分*。調べたいカテゴリを選んで、3AIに投げる質問（プロンプト）をつくるだけ。質問作りもAIがお手伝いします。（*Quick Scanの場合）</p>
+      </div>
+      <div class="steps-col">
         <div class="step-item">
           <div class="step-icon-wrap"><span class="material-icons">shopping_cart</span></div>
-          <p class="step-num">STEP 1</p>
-          <p class="step-title">プランを選んで購入</p>
-          <p class="step-sub">クレジットカード決済・1分</p>
+          <div class="step-text">
+            <p class="step-num">STEP 1</p>
+            <p class="step-title">プランを選んで購入</p>
+            <p class="step-sub">クレジットカード決済・1分</p>
+          </div>
         </div>
-        <span class="material-icons step-arrow">chevron_right</span>
         <div class="step-item">
           <div class="step-icon-wrap"><span class="material-icons">mail</span></div>
-          <p class="step-num">STEP 2</p>
-          <p class="step-title">購入コードをメールで受け取る</p>
-          <p class="step-sub">即時自動送信</p>
+          <div class="step-text">
+            <p class="step-num">STEP 2</p>
+            <p class="step-title">購入コードをメールで受け取る</p>
+            <p class="step-sub">即時自動送信</p>
+          </div>
         </div>
-        <span class="material-icons step-arrow">chevron_right</span>
         <div class="step-item">
           <div class="step-icon-wrap"><span class="material-icons">edit</span></div>
-          <p class="step-num">STEP 3</p>
-          <p class="step-title">ブランド名・キーワードを入力して調査実行</p>
-          <p class="step-sub">カテゴリ選択・2分</p>
+          <div class="step-text">
+            <p class="step-num">STEP 3</p>
+            <p class="step-title">ブランド名・キーワードを入力して調査実行</p>
+            <p class="step-sub">カテゴリ選択・2分</p>
+          </div>
         </div>
-        <span class="material-icons step-arrow">chevron_right</span>
         <div class="step-item">
           <div class="step-icon-wrap"><span class="material-icons">description</span></div>
-          <p class="step-num">STEP 4</p>
-          <p class="step-title">レポートを確認・保存</p>
-          <p class="step-sub">画面表示またはHTMLファイル</p>
+          <div class="step-text">
+            <p class="step-num">STEP 4</p>
+            <p class="step-title">レポートを確認・保存</p>
+            <p class="step-sub">画面表示またはHTMLファイル</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
+
+  <div class="tentacles-right">
+    <img src="assets/images/tentacles-side.png" alt=""
+      onerror="this.style.display='none'">
+  </div>
 
   <!-- ⑨ FAQ -->
   <section class="faq">
