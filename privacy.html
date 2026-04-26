@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>プライバシーポリシー | Ops Octopus</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy-900: #081b33;
+      --off-white: #fbfaf6;
+      --text-primary: #08131a;
+      --text-secondary: rgba(8,19,26,0.66);
+      --text-muted: rgba(8,19,26,0.45);
+      --border: rgba(8,19,26,0.12);
+      --link: #1B6CA8;
+    }
+
+    body {
+      font-family: 'Inter', 'Noto Sans JP', "Hiragino Sans", "Hiragino Kaku Gothic ProN",
+        Arial, Meiryo, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--text-primary);
+      background: var(--off-white);
+    }
+
+    /* ─── Header ─── */
+    .header {
+      background: var(--navy-900);
+      height: 56px;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .header-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      color: #fbfaf6;
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+    .header-logo:hover { opacity: 0.85; }
+
+    /* ─── Layout ─── */
+    .main {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 5rem;
+    }
+
+    /* ─── Back link ─── */
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 13px;
+      color: var(--link);
+      text-decoration: none;
+      margin-bottom: 2rem;
+    }
+    .back-link:hover { text-decoration: underline; }
+
+    /* ─── Page title ─── */
+    .page-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text-primary);
+      letter-spacing: 0.04em;
+      font-feature-settings: "palt";
+      margin-bottom: 4px;
+    }
+    .page-meta {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 2.5rem;
+    }
+
+    /* ─── Policy card ─── */
+    .policy-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0px 1px 3px 1px rgba(0,0,0,0.04), 0px 1px 2px 0px rgba(0,0,0,0.06);
+      margin-bottom: 1.5rem;
+    }
+
+    /* ─── Policy intro ─── */
+    .policy-intro {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* ─── Policy section ─── */
+    .policy-section {
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--border);
+    }
+    .policy-section:last-child { border-bottom: none; }
+
+    .policy-heading {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+    }
+    .policy-body {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.85;
+    }
+    .policy-body p + p { margin-top: 8px; }
+    .policy-body strong { color: var(--text-primary); font-weight: 600; }
+    .policy-body a {
+      color: var(--link);
+      word-break: break-all;
+    }
+    .policy-body a:hover { text-decoration: underline; }
+
+    .policy-list {
+      list-style: none;
+      margin-top: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .policy-list li {
+      padding-left: 1.1em;
+      position: relative;
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.75;
+    }
+    .policy-list li::before {
+      content: "・";
+      position: absolute;
+      left: 0;
+    }
+
+    .subsection { margin-top: 14px; }
+    .subsection:first-child { margin-top: 0; }
+
+    /* ─── Footer note ─── */
+    .legal-note {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 1.25rem;
+      line-height: 1.6;
+    }
+
+    /* ─── Footer ─── */
+    .footer {
+      background: var(--navy-900);
+      padding: 20px 24px;
+    }
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-logo {
+      font-size: 15px;
+      font-weight: 700;
+      color: #fbfaf6;
+      letter-spacing: 0.02em;
+    }
+    .footer-links {
+      display: flex;
+      gap: 20px;
+    }
+    .footer-link {
+      font-size: 13px;
+      color: rgba(251,250,246,0.65);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .footer-link:hover { color: #fbfaf6; }
+    .footer-copy {
+      font-size: 12px;
+      color: rgba(251,250,246,0.45);
+    }
+
+    @media (max-width: 600px) {
+      .footer-inner { flex-direction: column; text-align: center; }
+      .footer-links { justify-content: center; }
+      .policy-section,
+      .policy-intro { padding: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <a class="header-logo" href="index.html">🐙 Ops Octopus</a>
+  </header>
+
+  <main class="main">
+
+    <a class="back-link" href="index.html">← トップに戻る</a>
+
+    <h1 class="page-title">プライバシーポリシー</h1>
+    <p class="page-meta">制定日：2026年05月01日</p>
+
+    <div class="policy-card">
+
+      <div class="policy-intro">
+        Ops Octopus（以下「当サービス」）は、ユーザーの個人情報の取り扱いについて、以下の通りプライバシーポリシーを定めます。
+      </div>
+
+      <div class="policy-section">
+        <h2 class="policy-heading">1. 収集する情報</h2>
+        <ul class="policy-list">
+          <li>決済情報（Stripeを通じて取得するメールアドレス、お名前、国名等の決済関連情報）</li>
+          <li>調査に入力されたブランド名・キーワード・カテゴリ情報</li>
+          <li>購入後のアンケート回答（任意）</li>
+          <li>当サービスが利用するインフラ（Cloudflare等）において自動的に収集されるアクセスログ（IPアドレス、ブラウザ情報等）</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2 class="policy-heading">2. 情報の利用目的</h2>
+        <ul class="policy-list">
+          <li>購入コードの発行・送付</li>
+          <li>調査レポートの生成</li>
+          <li>サービスの改善・品質向上</li>
+          <li>お問い合わせへの対応</li>
+          <li>法令上の義務の履行</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h2 class="policy-heading">3. 第三者提供</h2>
+        <div class="policy-body">
+          <p>以下の場合を除き、収集した情報を第三者に提供しません。</p>
+          <ul class="policy-list" style="margin-top:8px;">
+            <li>ユーザーの同意がある場合</li>
+            <li>法令に基づく開示要求がある場合</li>
+            <li>サービス提供に必要な業務委託先への提供（Stripe等の決済処理業者）</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="policy-section">
+        <h2 class="policy-heading">4. 外部サービスへのデータ送信</h2>
+        <div class="policy-body">
+          <div class="subsection">
+            <p><strong>決済処理</strong><br>
+            Stripe, Inc.が提供する決済サービスを利用しています。決済に関する情報はStripeが管理します。詳細はStripeのプライバシーポリシー（<a href="https://stripe.com/jp/privacy" target="_blank" rel="noopener">https://stripe.com/jp/privacy</a>）をご確認ください。</p>
+          </div>
+          <div class="subsection">
+            <p><strong>調査レポート生成</strong><br>
+            レポート生成のために以下のAPIを使用しています。入力されたキーワード・ブランド名は調査プロンプトの一部として各社APIに送信されます。</p>
+            <ul class="policy-list">
+              <li>OpenAI API（ChatGPT）</li>
+              <li>Anthropic API（Claude）</li>
+              <li>Google Gemini API</li>
+            </ul>
+            <p style="margin-top:6px;">各社のプライバシーポリシーも併せてご確認ください。</p>
+          </div>
+          <div class="subsection">
+            <p><strong>インフラ</strong><br>
+            Cloudflare, Inc.のサービスを利用しており、アクセスログが自動的に収集される場合があります。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="policy-section">
+        <h2 class="policy-heading">5. 情報の保管・管理</h2>
+        <p class="policy-body">収集した情報は適切なセキュリティ対策を講じた上で管理します。不要になった情報は適切な方法で削除します。</p>
+      </div>
+
+      <div class="policy-section">
+        <h2 class="policy-heading">6. Cookieの使用</h2>
+        <p class="policy-body">当サービスはアクセス解析のためCookieを使用する場合があります。ブラウザの設定によりCookieを無効にすることができますが、一部機能が利用できなくなる場合があります。</p>
+      </div>
+
+      <div class="policy-section">
+        <h2 class="policy-heading">7. 未成年者について</h2>
+        <p class="policy-body">当サービスは18歳未満の方の利用を想定していません。</p>
+      </div>
+
+      <div class="policy-section">
+        <h2 class="policy-heading">8. プライバシーポリシーの変更</h2>
+        <p class="policy-body">本ポリシーは予告なく変更する場合があります。変更後はサイト上に掲載した時点で効力を生じます。</p>
+      </div>
+
+      <div class="policy-section">
+        <h2 class="policy-heading">9. お問い合わせ</h2>
+        <div class="policy-body">
+          <p>個人情報の取り扱いに関するお問い合わせは以下までご連絡ください。</p>
+          <p style="margin-top:6px;">メールアドレス：<a href="mailto:opsoctopus.jp@gmail.com">opsoctopus.jp@gmail.com</a></p>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="legal-note">※ 本ポリシーはOps Octopusのサービスに適用されます。</p>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="footer-logo">🐙 Ops Octopus</span>
+      <div class="footer-links">
+        <a class="footer-link" href="legal.html">特定商取引法に基づく表記</a>
+      </div>
+      <span class="footer-copy">© 2026 Ops Octopus. All rights reserved.</span>
+    </div>
+  </footer>
+
+</body>
+</html>
