@@ -38,8 +38,9 @@
     h2 { font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 700; }
     h3 { font-size: 1.4rem; font-weight: 600; }
     p  { font-size: 1.05rem; line-height: 1.8; }
-    li { font-size: 1.05rem; }
+    li { font-size: 1.05rem; line-height: 1.8; }
     .section-subtitle { font-size: 1.1rem; }
+    .section-desc { font-size: 1.1rem; }
 
     /* ─── Header ─── */
     .header {
@@ -274,11 +275,11 @@
       padding: 80px 24px;
     }
     .about-inner {
-      max-width: 800px;
+      max-width: 860px;
       margin: 0 auto;
     }
     .about-heading {
-      font-size: 26px;
+      font-size: clamp(1.6rem, 2.8vw, 2.2rem);
       font-weight: 700;
       color: var(--text-dark);
       letter-spacing: 0.04em;
@@ -286,35 +287,87 @@
       text-align: center;
       margin-bottom: 40px;
     }
-    .about-list {
-      list-style: none;
+    .about-content {
+      display: flex;
+      align-items: flex-end;
+      gap: 24px;
+    }
+    .about-left {
+      flex-shrink: 0;
+      display: flex;
+      align-items: flex-end;
+    }
+    .about-octopus-img {
+      width: 120px;
+      height: 120px;
+      object-fit: contain;
+    }
+    .about-octopus-fallback {
+      font-size: 72px;
+      line-height: 1;
+    }
+    .about-bubbles {
+      flex: 1;
       display: flex;
       flex-direction: column;
-      gap: 14px;
+      gap: 10px;
     }
-    .about-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
+    .bubble {
+      position: relative;
       background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 16px 20px;
-      font-size: 15px;
+      border-radius: 16px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      padding: 1rem 1.5rem;
+      font-size: 1rem;
       color: var(--text-dark);
-      line-height: 1.65;
+      line-height: 1.7;
+      margin-left: 14px;
     }
-    .about-item .material-icons {
-      color: var(--amber-400);
-      font-size: 20px;
+    .bubble::before {
+      content: '';
+      position: absolute;
+      left: -10px;
+      top: 50%;
+      transform: translateY(-50%);
+      border-width: 7px 10px 7px 0;
+      border-style: solid;
+      border-color: transparent var(--white) transparent transparent;
+    }
+    .about-bubbles .bubble:nth-child(even) { margin-top: 1rem; }
+    .about-closing {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 16px;
+      margin-top: 32px;
+    }
+    .bubble--closing {
+      margin-left: 0;
+      font-weight: 600;
+      color: var(--text-dark);
+      background: var(--amber-400);
+      box-shadow: 0 2px 12px rgba(251,191,36,0.25);
+    }
+    .bubble--closing::before {
+      left: auto;
+      right: -10px;
+      border-width: 7px 0 7px 10px;
+      border-color: transparent transparent transparent var(--amber-400);
+    }
+    .about-octopus-sm {
+      width: 72px;
+      height: 72px;
+      object-fit: contain;
       flex-shrink: 0;
-      margin-top: 1px;
     }
 
     @media (max-width: 640px) {
       .about { padding: 56px 16px; }
-      .about-heading { font-size: 20px; margin-bottom: 28px; }
-      .about-item { font-size: 14px; padding: 14px 16px; }
+      .about-heading { font-size: 1.4rem; margin-bottom: 28px; }
+      .about-content { gap: 16px; }
+      .about-left { display: none; }
+      .bubble { margin-left: 0; }
+      .bubble::before { display: none; }
     }
 
     /* ─── 共通 section タイポ ─── */
@@ -403,53 +456,54 @@
     .service-inner {
       max-width: 1100px;
       margin: 0 auto;
+      display: grid;
+      grid-template-columns: 40fr 60fr;
+      gap: 56px;
+      align-items: center;
     }
+    .service-left { display: flex; flex-direction: column; gap: 20px; }
     .service-heading {
-      font-size: 26px;
+      font-size: clamp(1.6rem, 2.5vw, 2.2rem);
       font-weight: 700;
       color: var(--text-dark);
       letter-spacing: 0.04em;
       font-feature-settings: "palt";
-      margin-bottom: 20px;
-      line-height: 1.5;
+      line-height: 1.45;
+      text-align: left;
     }
     .service-desc {
-      font-size: 15px;
+      font-size: 1.05rem;
       color: var(--text-muted);
-      line-height: 1.85;
-      max-width: 760px;
-      margin-bottom: 40px;
+      line-height: 1.8;
+      text-align: left;
     }
     .service-emphasis {
-      font-size: 22px;
-      font-weight: 700;
+      font-size: 1.2rem;
+      font-weight: 600;
       color: var(--text-dark);
-      text-align: center;
-      letter-spacing: 0.04em;
-      font-feature-settings: "palt";
+      text-align: left;
       line-height: 1.65;
-      margin-bottom: 48px;
     }
     .ai-cards {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
+      gap: 12px;
     }
     .ai-card {
       background: var(--white);
       border: 1px solid var(--border);
       border-radius: 12px;
-      padding: 24px;
+      padding: 1.5rem;
     }
     .ai-card-header {
       display: flex;
       align-items: center;
-      gap: 10px;
-      margin-bottom: 12px;
+      gap: 8px;
+      margin-bottom: 10px;
     }
-    .ai-card-icon { font-size: 24px !important; flex-shrink: 0; }
-    .ai-card-name { font-size: 15px; font-weight: 700; color: var(--text-dark); }
-    .ai-card-desc { font-size: 14px; color: var(--text-muted); line-height: 1.75; }
+    .ai-card-icon { font-size: 2.5rem !important; flex-shrink: 0; }
+    .ai-card-name { font-size: 1.1rem; font-weight: 600; color: var(--text-dark); }
+    .ai-card-desc { font-size: 1rem; color: var(--text-muted); line-height: 1.75; }
 
     /* ─── ⑤ Value ─── */
     .value {
@@ -461,19 +515,19 @@
       margin: 0 auto;
     }
     .value-heading {
-      font-size: 26px;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
       font-weight: 700;
       color: var(--text-dark);
       letter-spacing: 0.04em;
       font-feature-settings: "palt";
-      text-align: center;
+      text-align: left;
       line-height: 1.55;
       margin-bottom: 12px;
     }
     .value-sub {
-      font-size: 16px;
+      font-size: 1.1rem;
       color: var(--text-muted);
-      text-align: center;
+      text-align: left;
       margin-bottom: 48px;
     }
     .value-cards {
@@ -485,20 +539,20 @@
       background: var(--white);
       border: 1px solid var(--border);
       border-radius: 12px;
-      padding: 24px 20px;
+      padding: 2rem 1.5rem;
       box-shadow: 0 1px 4px rgba(0,0,0,0.06);
     }
     .value-card-icon {
-      font-size: 32px !important;
+      font-size: 3rem !important;
       color: var(--amber-500);
       margin-bottom: 12px;
       display: block;
     }
     .value-card-text {
-      font-size: 14px;
+      font-size: 1.1rem;
       color: var(--text-dark);
       line-height: 1.75;
-      font-weight: 500;
+      font-weight: 600;
     }
 
     /* ─── ⑥ Appeal ─── */
@@ -509,6 +563,22 @@
     .appeal-inner {
       max-width: 1100px;
       margin: 0 auto;
+    }
+    .appeal-heading {
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 700;
+      color: var(--text-dark);
+      text-align: center;
+      letter-spacing: 0.04em;
+      font-feature-settings: "palt";
+      margin-bottom: 12px;
+    }
+    .appeal-sub {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      text-align: center;
+      line-height: 1.75;
+      margin-bottom: 48px;
     }
     .appeal-cards {
       display: grid;
@@ -868,9 +938,9 @@
     }
     .footer-links {
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       align-items: center;
-      gap: 8px;
+      gap: 2rem;
     }
     .footer-link {
       font-size: 13px;
@@ -901,7 +971,8 @@
       .plans-heading    { font-size: 22px; }
       .steps-heading    { font-size: 20px; }
       .faq-heading      { font-size: 20px; }
-      .ai-cards     { grid-template-columns: 1fr; }
+      .service-inner { grid-template-columns: 1fr; }
+      .ai-cards     { grid-template-columns: repeat(3, 1fr); }
       .value-cards  { grid-template-columns: repeat(2, 1fr); }
       .appeal-cards { grid-template-columns: 1fr; }
       .plan-cards   { grid-template-columns: 1fr; }
@@ -978,28 +1049,26 @@
   <section id="about" class="about">
     <div class="about-inner">
       <h2 class="about-heading">こんな悩み、ありませんか？</h2>
-      <ul class="about-list">
-        <li class="about-item">
-          <span class="material-icons">check_circle</span>
-          AEO / LLMO / AI検索が気になるけど、何から手をつけていいか分からない
-        </li>
-        <li class="about-item">
-          <span class="material-icons">check_circle</span>
-          自社名をAIに聞いてみても、1回の回答だけでは判断できない
-        </li>
-        <li class="about-item">
-          <span class="material-icons">check_circle</span>
-          ChatGPTだけ見ても、ClaudeやGeminiでは違う可能性がある
-        </li>
-        <li class="about-item">
-          <span class="material-icons">check_circle</span>
-          競合と比べてどうなのかも、パッと分かりにくい
-        </li>
-        <li class="about-item">
-          <span class="material-icons">check_circle</span>
-          毎回手作業で聞いて、見比べて、まとめるのは正直しんどい
-        </li>
-      </ul>
+      <div class="about-content">
+        <div class="about-left">
+          <img src="assets/images/octopus-icon.png" alt="🐙" class="about-octopus-img"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+          <span class="about-octopus-fallback" style="display:none;">🐙</span>
+        </div>
+        <div class="about-bubbles">
+          <div class="bubble">AEO / LLMO / AI検索が気になるけど、何から手をつけていいか分からない</div>
+          <div class="bubble">自社名をAIに聞いてみても、1回の回答だけでは判断できない</div>
+          <div class="bubble">ChatGPTだけ見ても、ClaudeやGeminiでは違う可能性がある</div>
+          <div class="bubble">競合と比べてどうなのかも、パッと分かりにくい</div>
+          <div class="bubble">毎回手作業で聞いて、見比べて、まとめるのは正直しんどい</div>
+        </div>
+      </div>
+      <div class="about-closing">
+        <div class="bubble bubble--closing">そのモヤモヤ、Ops Octopusがまとめて代行します。</div>
+        <img src="assets/images/octopus-icon.png" alt="🐙" class="about-octopus-sm"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <span class="about-octopus-fallback" style="display:none;font-size:48px;">🐙</span>
+      </div>
     </div>
   </section>
 
@@ -1032,9 +1101,11 @@
   <!-- ④ プロダクト説明 -->
   <section id="service" class="service">
     <div class="service-inner">
-      <h2 class="service-heading">3つのAIに聞いて、ブランドの見え方をレポート化します。</h2>
-      <p class="service-desc">OpsOctopusのAIブランド調査レポートは、ChatGPT・Claude・Geminiの3つのAIに同じ条件で問い合わせ、その回答を自動で収集・整理してレポートとして提供します。AIによって回答の傾向が異なるため、3社を横断することで、より実態に近いブランドの見え方が把握できます。</p>
-      <p class="service-emphasis">ChatGPTに聞いて、Claudeに聞いて、Geminiに聞いて、集計して。<br>全部、こちらでやっておきます。</p>
+      <div class="service-left">
+        <h2 class="service-heading">3つのAIに聞いて、ブランドの見え方をレポート化します。</h2>
+        <p class="service-desc">Ops OctopusのAIブランド調査レポートは、ChatGPT・Claude・Geminiの3つのAIに同じ条件で問い合わせ、その回答を自動で収集・整理してレポートとして提供します。AIによって回答の傾向が異なるため、3社を横断することで、より実態に近いブランドの見え方が把握できます。</p>
+        <p class="service-emphasis">ChatGPTに聞いて、Claudeに聞いて、Geminiに聞いて、集計して。全部、こちらでやっておきます。</p>
+      </div>
       <div class="ai-cards">
         <div class="ai-card">
           <div class="ai-card-header">
@@ -1090,6 +1161,8 @@
   <!-- ⑥ アピールポイント -->
   <section class="appeal">
     <div class="appeal-inner">
+      <h2 class="appeal-heading">なぜOps Octopusなのか</h2>
+      <p class="appeal-sub">買い切り・営業なし・いますぐ調査開始。<br>それだけで、十分な理由があります。</p>
       <div class="appeal-cards">
         <div class="appeal-card">
           <div class="appeal-card-header">
